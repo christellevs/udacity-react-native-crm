@@ -2,18 +2,18 @@ const styles = () => {
   return {
     title: {
       color: "#000",
-      fontSize: "20px",
       fontWeight: "bold",
-      marginTop: "10px",
+      marginTop: 10,
+      alignSelf: "center",
     },
     view: {
       backgroundColor: "#B7ECEC",
       width: "100%",
       height: "100%",
-      paddingTop: "10px",
-      paddingBottom: "10px",
-      paddingRight: "10px",
-      paddingLeft: "10px",
+      paddingTop: 50,
+      paddingBottom: 10,
+      paddingRight: 10,
+      paddingLeft: 10,
     },
   };
 };

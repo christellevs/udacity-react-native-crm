@@ -2,21 +2,20 @@ const styles = () => {
   return {
     button: {
       marginTop: "5%",
-      height: "36px",
+      height: 36,
       width: "60%",
       border: "1px solid #014949",
-      borderRadius: "16px",
+      borderRadius: 16,
       backgroundColor: "#007373",
       alignSelf: "center",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      paddingTop: "10px",
-      paddingBottom: "10px",
+      paddingTop: 10,
+      paddingBottom: 10,
     },
     text: {
       color: "#fff",
-      fontSize: "20px",
     },
   };
 };
