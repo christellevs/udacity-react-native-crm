@@ -19,7 +19,7 @@ const ListRegions = () => {
       {regions.map((region) => (
         <Button
           key={region.id}
-          onPress={() => navigation.navigate("New Customer Form")}
+          onPress={() => navigation.navigate("List by Region")}
           text={region.name}
         />
       ))}
