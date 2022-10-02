@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   textInput: {
     borderWidth: 1,
     borderColor: "#014949",
@@ -11,4 +11,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default style;
+export default styles;

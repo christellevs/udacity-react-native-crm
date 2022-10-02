@@ -13,7 +13,7 @@ const ListRegions = () => {
     <View>
       <Button
         onPress={() => navigation.navigate("List by Region")}
-        text={item.name}
+        text={item.label}
       />
     </View>
   );
@@ -27,7 +27,7 @@ const ListRegions = () => {
       <FlatList
         data={regions}
         renderItem={renderRegions}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.value}
       />
     </SafeAreaView>
   );

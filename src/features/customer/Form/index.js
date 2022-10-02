@@ -3,24 +3,15 @@ import { View, TextInput, Text } from "react-native";
 import { useUpdateFields, useNewCustomer } from "..//hooks";
 import Button from "../../../components/Button";
 import Switch from "../Switch";
-import style from "./styles";
+import DropdownComponent from "../Dropdown";
+import styles from "./styles";
 
-const Form = ({ disabled = false }) => {
+const Form = () => {
   const { fields, setFormField } = useUpdateFields();
   const { onSubmit } = useNewCustomer();
   const [value, onChangeText] = React.useState("");
 
-  console.log();
-
   console.log(setFormField);
-  // const {
-  //     common_name,
-  //     scientific_name,
-  //     description,
-  //     endangered_status,
-  //     population,
-  //     invasive
-  // } = fields
 
   const { firstName, lastName, active } = fields;
 
@@ -30,20 +21,21 @@ const Form = ({ disabled = false }) => {
         key={"firstName"}
         placeholder="First Name..."
         value={firstName || ""}
-        style={style.textInput}
+        style={styles.textInput}
         onChangeText={(v) => setFormField("firstName", v)}
       />
       <TextInput
         key={"lastName"}
         placeholder="Last Name..."
         value={lastName || ""}
-        style={style.textInput}
+        style={styles.textInput}
         onChangeText={(v) => setFormField("lastName", v)}
       />
       <View>
         <Text>Active: </Text>
         <Switch setFormField={setFormField} />
       </View>
+      <DropdownComponent />
 
       <Button onPress={onSubmit} text="Submit" />
     </View>

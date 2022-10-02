@@ -1,7 +1,7 @@
 export const regions = [
-  { id: 1, name: "North West" },
-  { id: 2, name: "Mid West" },
-  { id: 3, name: "South West" },
-  { id: 4, name: "South East" },
-  { id: 5, name: "North East" },
+  { value: 1, label: "North West" },
+  { value: 2, label: "Mid West" },
+  { value: 3, label: "South West" },
+  { value: 4, label: "South East" },
+  { value: 5, label: "North East" },
 ];
