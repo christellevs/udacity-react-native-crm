@@ -1,4 +1,4 @@
-import React from "react";
+import { useNavigation } from "@react-navigation/native";
 import { View, TextInput, Text } from "react-native";
 import { useUpdateFields, useNewCustomer } from "..//hooks";
 import Button from "../../../components/Button";
@@ -7,14 +7,20 @@ import DropdownComponent from "../Dropdown";
 import styles from "./styles";
 
 const Form = () => {
+  const navigation = useNavigation();
+
   const { fields, setFormField } = useUpdateFields();
   const { onSubmit } = useNewCustomer();
-  const [value, onChangeText] = React.useState("");
+  // const [value, onChangeText] = React.useState("");
 
   console.log(setFormField);
 
   const { firstName, lastName, active, region } = fields;
 
+  const onPress = () => {
+    onSubmit();
+    navigation.navigate("List by Region");
+  };
   return (
     <View>
       <TextInput
@@ -37,7 +43,7 @@ const Form = () => {
       </View>
       <DropdownComponent setFormField={setFormField} />
 
-      <Button onPress={onSubmit} text="Submit" />
+      <Button onPress={onPress} text="Submit" />
     </View>
   );
 };
