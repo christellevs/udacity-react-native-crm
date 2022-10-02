@@ -7,10 +7,10 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useUpdateFields, useNewCustomer } from "..//hooks";
-import formStyles from "./styles";
+// import formStyles from "./styles";
 
 const Form = ({ disabled = false }) => {
-  const styles = StyleSheet.create(formStyles());
+  // const styles = StyleSheet.create(formStyles());
   const { fields, setFormField } = useUpdateFields();
   const { onSubmit } = useNewCustomer();
   const [value, onChangeText] = React.useState("");
@@ -30,8 +30,8 @@ const Form = ({ disabled = false }) => {
   const { firstName, lastName } = fields;
 
   return (
-    <View style={styles.container}>
-      <View style={styles.form}></View>
+    <View>
+      <View></View>
 
       <TextInput
         key={"firstName"}
