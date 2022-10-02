@@ -17,5 +17,6 @@ export const remove = async (key) => {
 };
 
 export const clear = async () => {
+  console.log("CLEARING ASYNC STORAGE");
   return await AsyncStorage.clear();
 };
