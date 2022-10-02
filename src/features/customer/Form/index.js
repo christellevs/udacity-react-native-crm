@@ -13,8 +13,6 @@ const Form = () => {
   const { onSubmit } = useNewCustomer();
   // const [value, onChangeText] = React.useState("");
 
-  console.log(setFormField);
-
   const { firstName, lastName, active, region } = fields;
 
   const onPress = () => {

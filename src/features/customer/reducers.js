@@ -1,10 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
+import {
+  PENDING,
+  INPROGRESS,
+  REQUESTING,
+  SUCCESS,
+  ERROR,
+} from "../../utils/helpers";
 
 const name = "customer";
 
 const initialState = {
   list: {
+    status: PENDING,
     customers: [],
+  },
+  create: {
+    status: PENDING,
+  },
+  edit: {
+    status: PENDING,
   },
   form: {
     fields: {
@@ -14,20 +28,51 @@ const initialState = {
       region: null,
     },
   },
+  error: {
+    message: "",
+  },
 };
 
 const reducers = {
   createCustomer: (state) => {
-    // nothing happens here yet
+    state.create.status = REQUESTING;
   },
   createCustomerResult: (state, { payload }) => {
+    state.create.status = SUCCESS;
     state.list.customers = payload;
+    state.form.fields = initialState.form.fields;
+    state.create = initialState.create;
   },
   createCustomerError: (state, { payload }) => {
-    // nothing happens here yet
+    state.create.status = ERROR;
+    state.error.message = payload;
+    state.form.fields = initialState.form.fields;
   },
-  createCustomerReset: (state) => {
-    // nothing happens here yet
+  editCustomer: (state, { payload }) => {
+    state.edit.status = REQUESTING;
+  },
+  setForm: (state, { payload }) => {
+    const customer = state.list.customers.find((a) => (a.id = payload));
+
+    if (customer) {
+      state.form.fields = customer;
+    } else {
+      state.error.message = `could not find customer with id: ${payload}`;
+    }
+  },
+  editCustomerResult: (state, { payload }) => {
+    state.edit.status = SUCCESS;
+    state.list.customers = payload;
+    state.form.fields = initialState.form.fields;
+    state.edit = initialState.edit;
+  },
+  editCustomerError: (state) => {
+    state.edit.status = ERROR;
+    state.error.message = payload;
+    state.form.fields = initialState.form.fields;
+  },
+  editCustomerStatus: (state, { payload }) => {
+    state.edit = payload;
   },
   setFormField: (state, { payload }) => {
     const current = state.form.fields;
@@ -58,7 +103,11 @@ export const {
   createCustomer,
   createCustomerResult,
   createCustomerError,
-  createCustomerReset,
+  setForm,
+  editCustomer,
+  editCustomerResult,
+  editCustomerError,
+  editCustomerStatus,
   setFormField,
   loadCustomers,
   loadResult,

@@ -9,7 +9,10 @@ export function* watchCreateCustomer() {
 export function* takeCreateCustomer() {
   console.log("Starting fetch request to API");
   try {
-    const fields = yield select((state) => state.customer.form.fields);
+    const fields = yield select((state) => {
+      console.log("state: ", state);
+      return state.customer.form.fields;
+    });
     const customers = yield select((state) => state.customer.list.customers);
 
     const customer = {
@@ -17,7 +20,6 @@ export function* takeCreateCustomer() {
       ...fields,
     };
 
-    // pretend call to API
     yield delay(500);
 
     const result = [customer, ...customers];

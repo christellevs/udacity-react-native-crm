@@ -5,3 +5,9 @@ export const regions = [
   { value: 4, label: "South East" },
   { value: 5, label: "North East" },
 ];
+
+export const PENDING = "PENDING";
+export const INPROGRESS = "INPROGRESS";
+export const REQUESTING = "REQUESTING";
+export const SUCCESS = "SUCCESS";
+export const ERROR = "ERROR";
