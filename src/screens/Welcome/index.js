@@ -15,6 +15,11 @@ const Welcome = () => {
         onPress={() => navigation.navigate("List of Regions")}
         text="Get Started"
       />
+
+      {/* <Button
+        onPress={() => navigation.navigate("List by Region")}
+        text="List by Region"
+      /> */}
     </View>
   );
 };

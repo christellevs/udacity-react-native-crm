@@ -1,17 +1,11 @@
 import React from "react";
-import { useNavigation } from "@react-navigation/native";
-import { View, Text, StyleSheet } from "react-native";
-import styles from "./styles";
+import { SafeAreaView } from "react-native";
+import List from "../../features/customer/List";
 
-const Welcome = () => {
-  const style = StyleSheet.create(styles());
-  // const navigation = useNavigation();
+const ListByRegion = () => (
+  <SafeAreaView>
+    <List />
+  </SafeAreaView>
+);
 
-  return (
-    <View style={style.view}>
-      <Text style={style.title}>Customers Listed by region</Text>
-    </View>
-  );
-};
-
-export default Welcome;
+export default ListByRegion;
