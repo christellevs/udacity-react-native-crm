@@ -1,7 +1,8 @@
 import React from "react";
-import { StyleSheet, View, TextInput } from "react-native";
+import { View, TextInput, Text } from "react-native";
 import { useUpdateFields, useNewCustomer } from "..//hooks";
 import Button from "../../../components/Button";
+import Switch from "../Switch";
 import style from "./styles";
 
 const Form = ({ disabled = false }) => {
@@ -39,6 +40,10 @@ const Form = ({ disabled = false }) => {
         style={style.textInput}
         onChangeText={(v) => setFormField("lastName", v)}
       />
+      <View>
+        <Text>Active: </Text>
+        <Switch />
+      </View>
 
       <Button onPress={onSubmit} text="Submit" />
     </View>
