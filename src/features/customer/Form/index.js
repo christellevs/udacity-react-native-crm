@@ -22,7 +22,7 @@ const Form = ({ disabled = false }) => {
   //     invasive
   // } = fields
 
-  const { firstName, lastName } = fields;
+  const { firstName, lastName, active } = fields;
 
   return (
     <View>
@@ -42,7 +42,7 @@ const Form = ({ disabled = false }) => {
       />
       <View>
         <Text>Active: </Text>
-        <Switch />
+        <Switch setFormField={setFormField} />
       </View>
 
       <Button onPress={onSubmit} text="Submit" />

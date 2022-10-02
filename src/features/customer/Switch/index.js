@@ -2,9 +2,14 @@ import React, { useState } from "react";
 import { View, Switch } from "react-native";
 import styles from "./styles";
 
-const App = () => {
+const SwitchField = ({ setFormField }) => {
   const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
+  const toggleSwitch = (e) => {
+    console.log("toggle: ", e);
+
+    setIsEnabled(e);
+    setFormField("active", e);
+  };
 
   return (
     <View style={styles.container}>
@@ -19,4 +24,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default SwitchField;

@@ -5,12 +5,16 @@ import { useNavigation } from "@react-navigation/native";
 const Row = ({ item }) => {
   const { navigate } = useNavigation();
 
+  console.log("item: ", item);
+  console.log("active: ", item.active);
+
   return (
     <TouchableOpacity onPress={() => navigate("Edit", { customerID: item.id })}>
       <View key={item.id} style={{ borderWidth: 1, padding: 10, margin: 10 }}>
         <Text key={"id"}>ID: {item.id}</Text>
         <Text key={"fn"}>First Name: {item.firstName}</Text>
         <Text key={"ln"}>Last Name: {item.lastName}</Text>
+        <Text key={"ac"}>Active: {item.active ? "True" : "False"}</Text>
       </View>
     </TouchableOpacity>
   );

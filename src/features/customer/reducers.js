@@ -10,6 +10,7 @@ const initialState = {
     fields: {
       firstName: null,
       lastName: null,
+      active: false,
     },
   },
 };
