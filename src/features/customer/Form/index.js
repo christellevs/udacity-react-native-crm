@@ -6,17 +6,15 @@ import Switch from "../Switch";
 import DropdownComponent from "../Dropdown";
 import styles from "./styles";
 
-const Form = () => {
+const Form = ({ handleSubmit, customerID, status }) => {
   const navigation = useNavigation();
 
-  const { fields, setFormField } = useUpdateFields();
-  const { onSubmit } = useNewCustomer();
-  // const [value, onChangeText] = React.useState("");
+  const { fields, setFormField } = useUpdateFields(customerID);
 
   const { firstName, lastName, active, region } = fields;
 
   const onPress = () => {
-    onSubmit();
+    handleSubmit();
     navigation.navigate("List by Region");
   };
   return (
