@@ -1,11 +1,13 @@
 import React from "react";
-import { SafeAreaView } from "react-native";
-import List from "../../features/customer/List";
+import { SafeAreaView, ScrollView } from "react-native";
+import List from "../../../features/customer/components/List";
 import styles from "./styles";
 
 const ListByRegion = () => (
   <SafeAreaView style={styles.view}>
-    <List />
+    <ScrollView>
+      <List />
+    </ScrollView>
   </SafeAreaView>
 );
 

@@ -2,11 +2,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Welcome from "../screens/Welcome";
-import ListRegions from "../screens/ListRegions";
-import NewCustomer from "../screens/NewCustomer";
-import EditCustomer from "../screens/EditCustomer";
+import ListRegions from "../screens/region/ListRegions";
+import NewCustomer from "../screens/customer/NewCustomer";
+import EditCustomer from "../screens/customer/EditCustomer";
 
-import ListByRegion from "../screens/ListByRegion";
+import ListByRegion from "../screens/region/ListByRegion";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +17,7 @@ const Navigation = () => {
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="List of Regions" component={ListRegions} />
         <Stack.Screen name="List by Region" component={ListByRegion} />
-        <Stack.Screen name="New Customer Form" component={NewCustomer} />
+        <Stack.Screen name="New Customer" component={NewCustomer} />
         <Stack.Screen name="Edit Customer" component={EditCustomer} />
       </Stack.Navigator>
     </NavigationContainer>

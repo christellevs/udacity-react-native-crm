@@ -1,7 +1,7 @@
 import React from "react";
 import { useRoute } from "@react-navigation/native";
-import { useEditCustomer } from "../../features/customer/hooks";
-import Form from "../../features/customer/Form";
+import { useEditCustomer } from "../../../features/customer/hooks";
+import Form from "../../../features/customer/components/Form";
 
 const Edit = () => {
   const { params } = useRoute();

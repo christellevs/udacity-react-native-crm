@@ -16,10 +16,10 @@ const Welcome = () => {
         text="Get Started"
       />
 
-      {/* <Button
-        onPress={() => navigation.navigate("List by Region")}
-        text="List by Region"
-      /> */}
+      <Button
+        onPress={() => console.log("TODO - delete data from async storage")}
+        text="Clear Data"
+      />
     </View>
   );
 };

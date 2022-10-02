@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { View, TextInput, Text } from "react-native";
-import { useUpdateFields, useNewCustomer } from "..//hooks";
-import Button from "../../../components/Button";
+import { useUpdateFields } from "../../hooks";
+import Button from "../../../../components/Button";
 import Switch from "../Switch";
 import DropdownComponent from "../Dropdown";
 import styles from "./styles";

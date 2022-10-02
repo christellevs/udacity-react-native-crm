@@ -1,9 +1,8 @@
-import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView, View, Text, FlatList } from "react-native";
-import Button from "../../components/Button";
+import Button from "../../../components/Button";
+import { regions } from "../../../utils/helpers";
 import styles from "./styles";
-import { regions } from "../../utils/helpers";
 
 const ListRegions = () => {
   const navigation = useNavigation();

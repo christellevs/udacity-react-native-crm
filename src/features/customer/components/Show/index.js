@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-const Row = ({ item }) => {
+const ShowCustomer = ({ item }) => {
   const { navigate } = useNavigation();
 
   console.log("item: ", item);
@@ -22,4 +22,4 @@ const Row = ({ item }) => {
   );
 };
 
-export default Row;
+export default ShowCustomer;

@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Text, FlatList } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { useListCustomers } from "../hooks";
-import Row from "./row";
-import Button from "../../../components/Button";
+import { useListCustomers } from "../../hooks";
+import ShowCustomer from "../Show";
+import Button from "../../../../components/Button";
 
 const List = () => {
   const { navigate } = useNavigation();
@@ -16,7 +16,7 @@ const List = () => {
       {customers && customers.length > 0 ? (
         <FlatList
           data={customers || []}
-          renderItem={(props) => <Row {...props} />}
+          renderItem={(props) => <ShowCustomer {...props} />}
           keyExtractor={(item) => item.id}
         />
       ) : (
