@@ -17,6 +17,7 @@ const Form = ({ handleSubmit, customerID, status }) => {
     handleSubmit();
     navigation.navigate("List by Region");
   };
+
   return (
     <View>
       <TextInput
@@ -39,7 +40,11 @@ const Form = ({ handleSubmit, customerID, status }) => {
       </View>
       <DropdownComponent setFormField={setFormField} />
 
-      <Button onPress={onPress} text="Submit" />
+      <Button
+        onPress={onPress}
+        text="Submit"
+        disabled={status !== PENDING && status !== INPROGRESS}
+      />
     </View>
   );
 };
