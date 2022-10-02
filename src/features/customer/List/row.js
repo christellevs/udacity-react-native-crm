@@ -6,7 +6,6 @@ const Row = ({ item }) => {
   const { navigate } = useNavigation();
 
   console.log("item: ", item);
-  console.log("active: ", item.active);
 
   return (
     <TouchableOpacity onPress={() => navigate("Edit", { customerID: item.id })}>
@@ -15,6 +14,7 @@ const Row = ({ item }) => {
         <Text key={"fn"}>First Name: {item.firstName}</Text>
         <Text key={"ln"}>Last Name: {item.lastName}</Text>
         <Text key={"ac"}>Active: {item.active ? "True" : "False"}</Text>
+        <Text key={"re"}>Region: {item.region}</Text>
       </View>
     </TouchableOpacity>
   );

@@ -11,6 +11,7 @@ const initialState = {
       firstName: null,
       lastName: null,
       active: false,
+      region: null,
     },
   },
 };

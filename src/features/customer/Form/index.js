@@ -13,7 +13,7 @@ const Form = () => {
 
   console.log(setFormField);
 
-  const { firstName, lastName, active } = fields;
+  const { firstName, lastName, active, region } = fields;
 
   return (
     <View>
@@ -35,7 +35,7 @@ const Form = () => {
         <Text>Active: </Text>
         <Switch setFormField={setFormField} />
       </View>
-      <DropdownComponent />
+      <DropdownComponent setFormField={setFormField} />
 
       <Button onPress={onSubmit} text="Submit" />
     </View>

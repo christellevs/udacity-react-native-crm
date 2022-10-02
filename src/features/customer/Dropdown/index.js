@@ -4,7 +4,7 @@ import { Dropdown } from "react-native-element-dropdown";
 import { styles } from "./styles";
 import { regions } from "../../../utils/helpers";
 
-const DropdownComponent = () => {
+const DropdownComponent = ({ setFormField }) => {
   const [value, setValue] = useState(null);
   const [isFocus, setIsFocus] = useState(false);
   console.log("sel value: ", value);
@@ -13,11 +13,17 @@ const DropdownComponent = () => {
     if (value || isFocus) {
       return (
         <Text style={[styles.label, isFocus && { color: "blue" }]}>
-          Select a Region
+          Select a Region:
         </Text>
       );
     }
     return null;
+  };
+
+  const onChange = (item) => {
+    setValue(item.value);
+    setIsFocus(false);
+    setFormField("region", item.label);
   };
 
   return (
@@ -39,10 +45,7 @@ const DropdownComponent = () => {
         value={value}
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}
-        onChange={(item) => {
-          setValue(item.value);
-          setIsFocus(false);
-        }}
+        onChange={onChange}
       />
     </View>
   );
