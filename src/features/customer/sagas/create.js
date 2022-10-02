@@ -1,4 +1,4 @@
-import { all, put, select, takeLatest, delay } from "redux-saga/effects";
+import { put, select, takeLatest } from "redux-saga/effects";
 import * as actions from "../reducers";
 import { set } from "../../../utils/asyncStorage";
 
@@ -9,18 +9,13 @@ export function* watchCreateCustomer() {
 export function* takeCreateCustomer() {
   console.log("Starting fetch request to API");
   try {
-    const fields = yield select((state) => {
-      console.log("state: ", state);
-      return state.customer.form.fields;
-    });
+    const fields = yield select((state) => state.customer.form.fields);
     const customers = yield select((state) => state.customer.list.customers);
 
     const customer = {
       id: customers.length + 1,
       ...fields,
     };
-
-    yield delay(500);
 
     const result = [customer, ...customers];
 
