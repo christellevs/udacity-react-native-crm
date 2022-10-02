@@ -8,7 +8,9 @@ const Row = ({ item }) => {
   console.log("item: ", item);
 
   return (
-    <TouchableOpacity onPress={() => navigate("Edit", { customerID: item.id })}>
+    <TouchableOpacity
+      onPress={() => navigate("Edit Customer", { customerID: item.id })}
+    >
       <View key={item.id} style={{ borderWidth: 1, padding: 10, margin: 10 }}>
         <Text key={"id"}>ID: {item.id}</Text>
         <Text key={"fn"}>First Name: {item.firstName}</Text>

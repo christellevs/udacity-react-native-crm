@@ -1,8 +1,9 @@
 import React from "react";
-import { View, Text, FlatList, Button } from "react-native";
+import { View, Text, FlatList } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useListCustomers } from "../hooks";
 import Row from "./row";
+import Button from "../../../components/Button";
 
 const List = () => {
   const { navigate } = useNavigation();
@@ -22,9 +23,9 @@ const List = () => {
         <>
           <Text>{"No Customers"}</Text>
           <Button
-            title={"Add Customer"}
+            text="Add Customer"
             onPress={() => {
-              navigate("Add Customer");
+              navigate("New Customer Form");
             }}
           />
         </>
