@@ -25,7 +25,7 @@ const List = () => {
           <Button
             text="Add Customer"
             onPress={() => {
-              navigate("New Customer Form");
+              navigate("New Customer");
             }}
           />
         </>

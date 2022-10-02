@@ -17,7 +17,7 @@ const NewCustomer = () => {
   return (
     <SafeAreaView style={style.view}>
       <ScrollView>
-        <Text style={style.title}>New Customer Form</Text>
+        <Text style={style.title}>New Customer</Text>
         <Form handleSubmit={onSubmit} status={status} customerID={null} />
       </ScrollView>
     </SafeAreaView>

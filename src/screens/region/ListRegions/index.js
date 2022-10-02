@@ -19,7 +19,7 @@ const ListRegions = () => {
   return (
     <SafeAreaView style={styles.view}>
       <Button
-        onPress={() => navigation.navigate("New Customer Form")}
+        onPress={() => navigation.navigate("New Customer")}
         text="Create Customer"
       />
       <Text style={styles.title}>List of Regions:</Text>
