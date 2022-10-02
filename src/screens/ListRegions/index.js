@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { View, Text } from "react-native";
+import { SafeAreaView, View, Text, FlatList } from "react-native";
 import Button from "../../components/Button";
 import styles from "./styles";
 import { regions } from "../../utils/helpers";
@@ -8,21 +8,28 @@ import { regions } from "../../utils/helpers";
 const ListRegions = () => {
   const navigation = useNavigation();
   console.log(regions);
+
+  const renderRegions = ({ item }) => (
+    <View>
+      <Button
+        onPress={() => navigation.navigate("List by Region")}
+        text={item.name}
+      />
+    </View>
+  );
   return (
-    <View style={styles.view}>
+    <SafeAreaView style={styles.view}>
       <Button
         onPress={() => navigation.navigate("New Customer Form")}
         text="Create Customer"
       />
       <Text style={styles.title}>List of Regions:</Text>
-      {regions.map((region) => (
-        <Button
-          key={region.id}
-          onPress={() => navigation.navigate("List by Region")}
-          text={region.name}
-        />
-      ))}
-    </View>
+      <FlatList
+        data={regions}
+        renderItem={renderRegions}
+        keyExtractor={(item) => item.id}
+      />
+    </SafeAreaView>
   );
 };
 
