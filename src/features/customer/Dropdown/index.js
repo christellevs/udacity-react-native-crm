@@ -40,7 +40,7 @@ const DropdownComponent = ({ setFormField }) => {
         maxHeight={300}
         labelField="label"
         valueField="value"
-        placeholder={!isFocus ? "Select item" : "..."}
+        placeholder={!isFocus ? "Select region" : "..."}
         searchPlaceholder="Search..."
         value={value}
         onFocus={() => setIsFocus(true)}
