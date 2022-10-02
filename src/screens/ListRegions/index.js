@@ -1,21 +1,20 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text } from "react-native";
 import Button from "../../components/Button";
 import styles from "./styles";
 import { regions } from "../../utils/helpers";
 
 const ListRegions = () => {
-  const style = StyleSheet.create(styles());
   const navigation = useNavigation();
   console.log(regions);
   return (
-    <View style={style.view}>
+    <View style={styles.view}>
       <Button
         onPress={() => navigation.navigate("New Customer Form")}
         text="Create Customer"
       />
-      <Text style={style.title}>List of Regions:</Text>
+      <Text style={styles.title}>List of Regions:</Text>
       {regions.map((region) => (
         <Button
           key={region.id}
